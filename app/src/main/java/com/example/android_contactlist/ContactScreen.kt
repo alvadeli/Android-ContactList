@@ -34,7 +34,7 @@ fun ContactScreen(
                 )
             }
         },
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(20.dp)
     ){ padding ->
         if (state.isAddingContact)
         {

@@ -11,7 +11,26 @@ import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+
+@Composable
+@Preview
+fun AddContactDialogPreview() {
+    val state = ContactState(
+        firstName = "John",
+        lastName = "Doe",
+        phoneNumber = "123-456-7890"
+    )
+
+    AddContactDialog(
+        state = state,
+        onEvent = {}
+    )
+}
+
 
 @Composable
 fun AddContactDialog(

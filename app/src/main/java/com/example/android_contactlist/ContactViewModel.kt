@@ -35,11 +35,13 @@ class ContactViewModel(
                     dao.deleteContact(event.contact)
                 }
             }
+
             ContactEvent.HideDialog -> {
                 _state.update { it.copy(
                     isAddingContact = false
                 ) }
             }
+
             ContactEvent.SaveContact -> {
                 val firstName =state.value.firstName
                 val lastName = state.value.lastName
@@ -68,26 +70,31 @@ class ContactViewModel(
 
 
             }
+
             is ContactEvent.SetFirstName -> {
                 _state.update { it.copy(
                     firstName = event.firstName
                 ) }
             }
+
             is ContactEvent.SetLastName -> {
                 _state.update { it.copy(
                     lastName = event.lastName
                 ) }
             }
+
             is ContactEvent.SetPhoneNumber -> {
                 _state.update { it.copy(
                     phoneNumber = event.phoneNumber
                 ) }
             }
+
             ContactEvent.ShowDialog -> {
                 _state.update { it.copy(
                     isAddingContact = true
                 ) }
             }
+
             is ContactEvent.SortContacts -> {
                 _sortType.value = event.sortType
             }
