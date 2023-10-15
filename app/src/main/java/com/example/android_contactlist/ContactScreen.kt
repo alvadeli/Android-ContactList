@@ -15,8 +15,38 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+
+@Composable
+@Preview
+fun AddContactScreenPreview() {
+
+    var contact1 = Contact(
+        firstName = "AA",
+        lastName = "BB",
+        phoneNumber = "453879683968"
+    )
+
+    var contact2 = Contact(
+        firstName = "CC",
+        lastName = "DD",
+        phoneNumber = "65946945"
+    )
+
+    var contacts = listOf<Contact>(contact1,contact2)
+
+    val state = ContactState(
+        contacts = contacts
+    )
+
+    ContactScreen(
+        state = state,
+        onEvent = {}
+    )
+}
+
 
 @Composable
 fun ContactScreen(
